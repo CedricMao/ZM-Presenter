@@ -20,12 +20,12 @@ namespace org.ZikMe.UI.Presenter
 
         #region Properties
 
-        public ViList<IArtist> Artists
+        public ViList<ITrack> Tracks
         {
             get
             {
                 if (_br != null)
-                    return _br.Artists;
+                    return _br.Tracks;
 
                 return null;
             }
