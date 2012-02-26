@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WinampProxy</name>
+    </assembly>
+    <members>
+        <member name="F:WinampProxyNS.WinampUserControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampUserControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:WinampProxyNS.WinampUserControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.IsWinampRunning">
+            <summary>This function reports whether or not an instance of Winamp is currently running.</summary>
+            <returns>True (yes ) or false (no.)</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.StartWinamp">
+            <summary>This function invokes a new instance of Winamp if it's not yet started.</summary>
+            <returns>True (success) or false (failure.)</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.InitializeWinamp">
+            <summary>
+            This function initalizes the properties of Winamp (clears the playlist, sets volume to midlevel,
+            zeroes the equalizer, etc.)
+            </summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.StopWinamp">
+            <summary>This function stops one running instance of Winamp.</summary>
+            <returns>True (success) or false (failure.)</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.GetWinampVersion">
+            <summary>This function returns the version number of Winamp.</summary>
+            <returns>0.0 or more (Winamp version number) or -1 (Winamp not running or version unknown.)</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.GetWinampStatus">
+            <summary>This function returns a WinampStatus enum value indicating the current status of Winamp.</summary>
+            <returns>Enum value indicating the current status of Winamp: stopped, playing, paused, or unknown.</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.ShowWinamp">
+            <summary>This function shows the main Winamp window.</summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.HideWinamp">
+            <summary>This function hides the main Winamp window and all accessory windows.</summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.ClearPlaylist">
+            <summary>
+            This function clears the Winamp playlist.
+            Note: any track currently running will continue to run until completion - that's just how Winamp works.
+            </summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.EnqueueTrack(System.String)">
+            <summary>This function enqueues the track specified by the filename.</summary>
+            <param name="strFilename">The filename of the MP3 to enqueue.</param>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.GetPlaylistCount">
+            <summary>This function gets the total number of tracks in the current Winamp playlist.</summary>
+            <returns>0 or more (total number of queued tracks) or -1 (Winamp not running.)</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:WinampProxyNS.WinampInterface.GetPlaylist" -->
+        <member name="M:WinampProxyNS.WinampInterface.GetPlaylistPosition">
+            <summary>This function gets the index of the currently playing track in the Winamp playlist.</summary>
+            <returns>0 or more (zero-based track index) or -1 (Winamp not running.)</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.SetPlaylistPosition(System.Int32)">
+            <summary>This function sets the index of the currently playing track in the Winamp playlist.</summary>
+            <param name="position">The zero-based index of the track to be selected in the playlist.</param>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.GetTrackLength">
+            <summary>This function gets the *approximate* length, in milliseconds, of the currently playing track in the Winamp playlist.</summary>
+            <returns>0 or more (milliseconds in current track) or -1 (Winamp not running or no tracks queued.)</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.GetTrackPosition">
+            <summary>This function gets the position, in milliseconds, of the currently playing track in the Winamp playlist.</summary>
+            <returns>0 or more (milliseconds in current track) or -1 (Winamp not running or no tracks queued.)</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.GetTrackName">
+            <summary>This function gets the name of the currently playing track.</summary>
+            <returns>string (name of playing track) or "" (Winamp not running or no track playing.)</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.GetTrackFilename">
+            <summary>This function gets the filename of the currently playing track.</summary>
+            <returns>string (filename of playing track) or "" (Winamp not running or no track playing.)</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.GetTrackInfo">
+            <summary>This function returns a TrackInfo structure describing the currently playing track.</summary>
+            <returns>TrackInfo structure (info about playing track) or null (Winamp not running or no track playing.)</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.CalculatePlaylistDuration(System.Int32,System.Int32,System.Boolean)">
+            <summary>This function calculates the duration of a specified set of tracks in the playlist.</summary>
+            <param name="iStart">The zero-based index of the first track in the playlist to be included in the duration calculation.</param>
+            <param name="iEnd">The zero-based index of the last track in the playlist to be included in the duration calculation.</param>
+            <param name="bAnalyzeFiles">Specifies whether, when Winamp doesn't have duration information for a track, WinampInterface analyzes the actual file to extract the duration information.
+            Setting this parameter to true yields a more accurate calculation, but can also be more CPU- and bus-intensive.</param>
+            <returns>The duration (in seconds) of the specified set of tracks in the playlist.</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.CalculatePlaylistDuration(System.Boolean)">
+            <summary>This function calculates the duration of the entire playlist.</summary>
+            <param name="bAnalyzeFiles">Specifies whether, when Winamp doesn't have duration information for a track, WinampInterface analyzes the actual file to extract the duration information.
+            Setting this parameter to true yields a more accurate calculation, but can also be more CPU- and bus-intensive.</param>
+            <returns>The duration (in seconds) of the playlist.</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.CalculatePlaylistRemainderDuration(System.Boolean)">
+            <summary>This function calculates the duration of remaining tracks in the playlist.</summary>
+            <param name="bAnalyzeFiles">Specifies whether, when Winamp doesn't have duration information for a track, WinampInterface analyzes the actual file to extract the duration information.
+            Setting this parameter to true yields a more accurate calculation, but can also be more CPU- and bus-intensive.</param>
+            <returns>The duration (in seconds) of the remainder of playlist.</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.Play">
+            <summary>This function starts or resumes playback on Winamp.</summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.Pause">
+            <summary>This function pauses playback on Winamp.</summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.Stop">
+            <summary>This function stops playback on Winamp.</summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.PrevTrack">
+            <summary>This function jumps backward one track on Winamp.</summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.NextTrack">
+            <summary>This function jumps forward one track on Winamp.</summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.VolumeUp">
+            <summary>This function increases the master volume of Winamp by four points (on a scale of 0 to 255.)</summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.VolumeDown">
+            <summary>This function decreases the master volume of Winamp by four points (on a scale of 0 to 255.)</summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.JumpToTrackPosition(System.Int32)">
+            <summary>This function jumps to an (approximate) millisecond position in the currently playing track.</summary>
+            <param name="iMilliseconds">The (approximate) destination position, in milliseconds from the beginning of the track.</param>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.Forward5Sec">
+            <summary>This function jumps forward five seconds in the currently playing track on Winamp.</summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.Rewind5Sec">
+            <summary>This function jumps backward five seconds in the currently playing track on Winamp.</summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.SetVolume(System.Int32)">
+            <summary>This function sets the master volume of Winamp to a specific value.
+            IMPORTANT: If your application uses WinampProxy, don't use this static method of WinampInterface - use the SetVolume instance method of the WinampProxy object instead.</summary>
+            <param name="iVolume">The volume (between 0 and 255.)</param>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.SetPanning(System.Int32)">
+            <summary>This function sets the left/right balance of Winamp to a specific value.</summary>
+            <param name="iVolume">The balance (between -32 for far left and +32 for far right.)</param>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.GetShuffle">
+            <summary>This function gets the Shuffle value of Winamp.</summary>
+            <returns>Boolean value indicating whether or not Shuffle is activated.</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.SetShuffle(System.Boolean)">
+            <summary>This function sets the Shuffle value of Winamp.</summary>
+            <param name="bShuffle">Boolean value indicating whether or not Shuffle is to be activated.</param>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.GetRepeat">
+            <summary>This function gets the Repeat value of Winamp.</summary>
+            <returns>Boolean value indicating whether or not Repeat is activated.</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.SetRepeat(System.Boolean)">
+            <summary>This function sets the Repeat value of Winamp.</summary>
+            <param name="bShuffle">Boolean value indicating whether or not Repeat is to be activated.</param>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.IsEqualizerActive">
+            <summary>This function determines whether or not the Winamp equalizer is activated.</summary>
+            <returns>Boolean value indicating whether or not the Winamp equalizer is activated.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:WinampProxyNS.WinampInterface.SetEqualizerActive(System.Boolean)" -->
+        <member name="M:WinampProxyNS.WinampInterface.GetEqualizerBand(System.Int32)">
+            <summary>This function gets the value of one of the ten equalizer bands in Winamp.</summary>
+            <param name="iBand">The value (between 0 and 9, or 10 for the preamp) of the equalizer band to read.</param>
+            <returns>The integer value of the specified equalizer band (between -32 and 32) of the equalizer band.</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampInterface.SetEqualizerBand(System.Int32,System.Int32)">
+            <summary>This function sets the value of one of the ten equalizer bands in Winamp.</summary>
+            <param name="iBand">The equalizer band (between 0 and 9, or 10 for the preamp) to be set.</param>
+            <param name="iValue">The value of the equalizer band to be set.</param>
+        </member>
+        <member name="F:WinampProxyNS.WinampProxy.iEnqueuePromptMilliseconds">
+            <summary>Specifies when the eventEnqueuePrompt event is raised, in relation to the end of the playlist.</summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampProxy.VolumeUp">
+            <summary>This function increases the master volume of Winamp by four point (on a scale of 0 to 255.)</summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampProxy.VolumeDown">
+            <summary>This function decreases the master volume of Winamp by four points (on a scale of 0 to 255.)</summary>
+        </member>
+        <member name="M:WinampProxyNS.WinampProxy.SetVolume(System.Int32)">
+            <summary>This function sets the master volume of Winamp to a specific value.</summary>
+            <param name="iVolume">The volume (between 0 and 255.)</param>
+        </member>
+        <member name="M:WinampProxyNS.WinampProxy.GetPollingFrequency">
+            <summary>This function gets the frequency with which this proxy polls Winamp. The default is 100 milliseconds.</summary>
+            <returns>The number of milliseconds between polls.</returns>
+        </member>
+        <member name="M:WinampProxyNS.WinampProxy.SetPollingFrequency(System.Int32)">
+            <summary>
+            This function sets the frequency with which this proxy polls Winamp. The default is 100 milliseconds.
+            NOTE: Higher values result in more interprocess communication that can bog down the machine.
+            </summary>
+            <param name="iMilliseconds">The number of milliseconds between polls.</param>
+        </member>
+        <member name="P:WinampProxyNS.WinampProxy.bRunning">
+            <summary>The current state of Winamp. </summary>
+        </member>
+        <member name="P:WinampProxyNS.WinampProxy.enumWinampStatus">
+            <summary>A more detailed description of the state of Winamp (Paused, Stopped, etc.)</summary>
+        </member>
+        <member name="P:WinampProxyNS.WinampProxy.iPlaylistCount">
+            <summary>The number of tracks in the current Winamp playlist.</summary>
+        </member>
+        <member name="P:WinampProxyNS.WinampProxy.iPlaylistTrackNumber">
+            <summary>The zero-based index of the currently playing track in the Winamp playlist.</summary>
+        </member>
+        <member name="P:WinampProxyNS.WinampProxy.strCurrentTrackName">
+            <summary>The name of the currently playing track.</summary>
+        </member>
+        <member name="P:WinampProxyNS.WinampProxy.iCurrentTrackDuration">
+            <summary>The duration (in milliseconds) of the currently playing track.</summary>
+        </member>
+        <member name="P:WinampProxyNS.WinampProxy.iCurrentTrackPosition">
+            <summary>The track position (in milliseconds) of the currently playing track.</summary>
+        </member>
+        <member name="P:WinampProxyNS.WinampProxy.iVolume">
+            <summary>
+            The volume of Winamp between 0 and 255.
+            IMPORTANT: Due to limitations in the Winamp SDK, this value is NOT reliable - and may not even be known. See the WinampProxy documentation for more info.
+            </summary>
+        </member>
+        <member name="F:WinampProxyNS.WinampQueue.lstTracks">
+            <summary>
+            This is the list of tracks to be fed to Winamp.
+            NOTE: DO NOT LOCK THIS CLASS! If you do something like this -
+               foreach (Track track in lstTracks) { ... }
+            - while the queue is playing, WinampProxy may try to remove a track from the list to feed to Winamp...
+            and either Winamp or your application may blow up with an exception. If you need to iterate over the
+            track list, do something like:
+               for (int i = 0; i [lessthan] lstTracks.Count; i++) {  Track track = lstTracks[i] ... }
+            </summary>
+        </member>
+        <member name="F:WinampProxyNS.WinampQueue.iQueueEndingPromptMilliseconds">
+            <summary>
+            This variable determines how long (in milliseconds) before the end of the playlist queue the
+            eventQueueEndingPrompt is raised. By default, this is 30 seconds.
+            </summary>
+        </member>
+        <member name="P:WinampProxyNS.WinampQueue.iPlaylistCount">
+            <summary>The number of tracks in the current Winamp playlist. (Note: This is overridden to include the number of enqueued tracks.)</summary>
+        </member>
+        <member name="E:WinampProxyNS.WinampQueue.eventQueueEndingPrompt">
+            <summary>
+            This event is raised when less than (iQueueEndingPromptMilliseconds) ms remain in the
+            playlist that Winamp is playing.
+            </summary>
+        </member>
+        <member name="T:WinampProxyNS.Track">
+            <summary>
+            This class contains the information about a track queued in the Winamp playlist.
+            NOTE: The duration information may be incorrect.
+            </summary>
+        </member>
+        <member name="T:WinampProxyNS.TrackInfo">
+            <summary>This class contains some additional information about the structure of a track in the Winamp playlist.</summary>
+        </member>
+    </members>
+</doc>

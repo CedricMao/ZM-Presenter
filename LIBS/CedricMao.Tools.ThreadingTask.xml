@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CedricMao.Tools.ThreadingTask</name>
+    </assembly>
+    <members>
+        <member name="M:CedricMao.Tools.ThreadingTask.BackgroundTask.OnRunWorkerCompleted(System.ComponentModel.RunWorkerCompletedEventArgs)">
+            <summary>
+            An OverLayer of the Backgroundworker that override OnRunWorkerCompleted
+            Not only one Event is raised when the worker completed, but three can be.
+            BgTaskCompleted occurs only if the processing went ok
+            BgTaskError occurs if an exception is raised
+            BgTaskCancelled occurs if the task is cancelled during the processing
+            </summary>
+        </member>
+    </members>
+</doc>
