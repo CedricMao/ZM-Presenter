@@ -13,7 +13,6 @@ namespace org.ZikMe.UI.Presenter
         public Library()
         {
             _br = BusinessReferential.Instance;
-            
         }
     }
 }
